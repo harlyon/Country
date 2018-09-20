@@ -15,7 +15,7 @@ class Content extends Component {
                         <span className="tagline">{country.name}.</span>
                       </div>
                       <div className="split-bio">
-                        <p><img src={country.flag} alt="flag" />
+                        <p><img src={country.flag} alt="flag-image" />
                         <ul>
                             <li>Region:- <a href="">{country.region}</a></li>
                             <li>SubRegion:- <a href="">{country.subregion}</a></li>
