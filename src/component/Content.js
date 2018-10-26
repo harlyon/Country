@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Main.css';
+var NumberFormat = require('react-number-format');
 
 class Content extends Component {
     render() {
@@ -20,7 +21,7 @@ class Content extends Component {
                             <li>Region:- <a href="">{country.region}</a></li>
                             <li>SubRegion:- <a href="">{country.subregion}</a></li>
                             <li>Official Language:- <a href="">{country.languages[0].name}</a></li>
-                            <li>Population:- <a href="">{country.population}</a></li>
+                            <li>Population:- <a href=""><NumberFormat value={country.population} displayType={'text'} thousandSeparator={true}/></a></li>
                             <li>Demonym:- <a href="">{country.demonym}</a></li>
                             <li>Currency:- <a href="">{country.currencies[0].name}</a></li>
                             {/* <li>Call Code:- <a href="">{country.callingcodes[1]}</a></li> */}
@@ -28,11 +29,11 @@ class Content extends Component {
                          </p>
                       </div>
                     </div>
-                  </div>    
+                  </div>
                   )
                 })
               }
-            
+
             </div>
         );
     }

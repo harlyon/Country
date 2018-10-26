@@ -14,26 +14,32 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        this.onSearch();
+        const json = localStorage.getItem("countries");
+        const countries = JSON.parse(json);
+        this.setState({ countries});
+    }
+
+    componentDidUpdate() {
+        const countries = JSON.stringify(this.state.countries);
+        localStorage.setItem("countries", countries);
     }
 
     inputChange = (e) => {
         this.setState({ query: e.target.value })
     }
-    
+
 
     onSearch = () => {
         axios.get(`https://restcountries.eu/rest/v2/name/${this.state.query}?fullText=true`)
         .then(res => {
-            // const countries = JSON.parse(res.data)
             console.log(res.data);
-            this.setState({ countries: res.data});            
+            this.setState({ countries: res.data});
         })
         .catch(error => {
             console.log(error);
         })
     }
-    
+
 
     render() {
         return (
@@ -47,7 +53,7 @@ class Main extends Component {
         </div>
         </div>
           {/* Content Side */}
-          <Content countries={this.state.countries} />  
+          <Content countries={this.state.countries} />
       </div>
             </div>
         );
