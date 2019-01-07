@@ -53,7 +53,13 @@ class Main extends Component {
         </div>
         </div>
           {/* Content Side */}
-          <Content countries={this.state.countries} />
+           {
+                this.state.countries && this.state.countries.map((item)=> {
+                  return (
+                      <Content item = {item} key={item.name} />
+                  )
+            })
+        }
       </div>
             </div>
         );
