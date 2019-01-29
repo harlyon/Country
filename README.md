@@ -1,7 +1,11 @@
 
-In the project directory, you can run:
+Country Search App
 
-### `npm start`
+Clone the project:
+
+In the project directory,
+1. run ### `yarn install`
+2. run ### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
